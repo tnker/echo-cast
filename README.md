@@ -31,5 +31,46 @@ Built with:
 - **Rust**: Handling low-level input hooks safely.
 - **React + Tailwind**: For a beautiful, responsive overlay UI.
 
+## Development & Build
+
+### Prerequisites
+
+**Node.js** (v18+) and **Rust** (latest stable) are required.
+
+- **Windows**: Install [Build Tools for Visual Studio](https://visualstudio.microsoft.com/visual-cpp-build-tools/) and select the "Desktop development with C++" workload.
+- **macOS**: Run `xcode-select --install` to install Xcode Command Line Tools.
+- **Linux (Debian/Ubuntu)**: Install dependencies using the following command:
+  ```bash
+  sudo apt update
+  sudo apt install libwebkit2gtk-4.1-dev build-essential curl wget file libssl-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
+  ```
+
+### Commands
+
+Run these commands from the project root directory.
+
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Start Development Server** (with Hot Reload)
+   ```bash
+   npm run tauri dev
+   ```
+
+3. **Production Build**
+   Generates optimized binaries and installers for your OS.
+   ```bash
+   npm run tauri build
+   ```
+   
+   **Output:**
+   - **Windows**: 
+     - Installer: `src-tauri/target/release/bundle/nsis/*.exe`
+     - Portable: `src-tauri/target/release/echocast.exe`
+   - **macOS**: `src-tauri/target/release/bundle/dmg/*.dmg`
+   - **Linux**: `src-tauri/target/release/bundle/deb/*.deb`
+
 ---
 *Created for efficient communication.*
